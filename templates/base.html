@@ -11,6 +11,10 @@
     <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
     <title>{% block title %}{% endblock %} - Learning Flask</title>
 {% endblock %}
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+{% endblock %}
 {% block navbar %}
     <div class="navbar navbar-inverse" role="navigation">
       <div class="container">
