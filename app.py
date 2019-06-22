@@ -1,6 +1,12 @@
+# Imports
 from flask import Flask, render_template
-app = Flask(__name__)
+from flask_bootstrap import Bootstrap
 
+# globals
+app = Flask(__name__)
+bootstrap = Bootstrap(app)
+
+# routes
 @app.route('/')
 def index():
     return render_template('index.html')
