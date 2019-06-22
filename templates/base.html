@@ -13,7 +13,6 @@
 {% endblock %}
 {% block scripts %}
     {{ super() }}
-    {{ moment.include_moment() }}
 {% endblock %}
 {% block navbar %}
     <div class="navbar navbar-inverse" role="navigation">
@@ -30,15 +29,6 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="{{ url_for('index') }}">Home</a></li>
-            </ul>
-            <ul class="nav navbar-nav">
-                <li><a href="{{ url_for('user', name='john') }}">John</a></li>
-            </ul>
-            <ul class="nav navbar-nav">
-                <li><a href="{{ url_for('user', name='bob') }}">Bob</a></li>
-            </ul>
-            <ul class="nav navbar-nav">
-                <li><a href="{{ url_for('user', name='tim') }}">Tim</a></li>
             </ul>
         </div>
       </div><!-- /.container -->
