@@ -13,15 +13,14 @@ from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-# shared variables
-basedir = os.path.abspath(os.path.dirname(__file__))
+
 
 # app config
 app = Flask(__name__)
 # app config - wtforms
 app.config['SECRET_KEY'] = 'W8KDrAC$Rp54qLkC2zR0ACss'
 # app config - sqlalchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'db/data.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # app config - mail
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
