@@ -1,6 +1,8 @@
 {% extends "bootstrap/base.html" %}
 {% include 'common.html' %}
 
+{% block title %}Flasky{% endblock %}
+
 {% block head %}
     {{ super() }}
     <meta charset="UTF-8">
@@ -10,7 +12,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
     <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
-    <title>{% block title %}{% endblock %} - Learning Flask</title>
 {% endblock %}
 
 {% block navbar %}
@@ -31,7 +32,14 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('auth.change_password') }}">Change Password</a></li>
+                        <li><a href="{{ url_for('auth.change_email_request') }}">Change Email</a></li>
+                        <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                    </ul>
+                </li>
                 {% else %}
                 <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
                 {% endif %}
