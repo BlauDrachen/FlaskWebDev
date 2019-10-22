@@ -13,6 +13,7 @@ migrate = Migrate(app, db)
 def make_shell_context():
     return dict(db=db, User=User, Role=Role)
 
+
 @app.cli.command()
 @click.argument('test_names', nargs=-1)
 def test(test_names):
