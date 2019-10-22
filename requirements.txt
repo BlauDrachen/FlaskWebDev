@@ -6,4 +6,6 @@ Flask-Migrate
 Flask-Moment
 Flask-SQLAlchemy
 Flask-WTF
+itsdangerous
+werkzeug
 wtforms
