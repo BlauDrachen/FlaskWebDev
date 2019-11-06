@@ -1,3 +1,4 @@
+bleach
 Flask
 Flask-Bootstrap
 Flask-Login
@@ -8,5 +9,6 @@ Flask-PageDown
 Flask-SQLAlchemy
 Flask-WTF
 itsdangerous
+markdown
 werkzeug
 wtforms
