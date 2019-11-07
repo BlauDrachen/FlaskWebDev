@@ -1,7 +1,7 @@
 import os
 import click
 from app import create_app, db
-from app.models import User, Role, Permission, Post, Follow
+from app.models import User, Role, Permission, Post, Follow, Comment
 from flask_migrate import Migrate
 
 # config
@@ -11,7 +11,7 @@ migrate = Migrate(app, db)
 # shell context
 @app.shell_context_processor
 def make_shell_context():
-    return dict(db=db, User=User, Follow=Follow, Role=Role, Permission=Permission, Post=Post)
+    return dict(db=db, User=User, Follow=Follow, Role=Role, Permission=Permission, Post=Post, Comment=Comment)
 
 
 @app.cli.command()
